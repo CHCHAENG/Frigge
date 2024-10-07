@@ -1,6 +1,7 @@
 package com.example.termproject;
 
-import static com.example.termproject.MyFridgeActivity.fName;
+import static com.example.termproject.ChoiceFridgeActivity.fName;
+import static com.example.termproject.ui.dashboard.DashboardFragment.foodName;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -35,7 +36,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddFoodActivity extends AppCompatActivity implements View.OnClickListener {
+public class ChoiceFoodActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context;
 
     private Button submitBtn;
@@ -98,11 +99,11 @@ public class AddFoodActivity extends AppCompatActivity implements View.OnClickLi
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, int i) {
             if(i == R.id.fridgeWay_cool_radioBtn){
-//                Toast.makeText(getApplicationContext(), "냉장선택", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "냉장선택", Toast.LENGTH_SHORT).show();
                 storageWayInt = 1;
             }
             else if(i == R.id.fridgeWay_freeze_radioBtn){
-//                Toast.makeText(getApplicationContext(), "냉동선택", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "냉동선택", Toast.LENGTH_SHORT).show();
                 storageWayInt = 2;
             }
         }
@@ -135,8 +136,8 @@ public class AddFoodActivity extends AppCompatActivity implements View.OnClickLi
     public void mOnBarcode(View v){
         //TODO: 바코드인식 버튼 클릭시 실행 함수 구현
 
-//        Toast.makeText(getApplicationContext(), "바코드 버튼 클릭", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(AddFoodActivity.this, testZxing.class);
+        Toast.makeText(getApplicationContext(), "바코드 버튼 클릭", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(ChoiceFoodActivity.this, testZxing.class);
         startActivity(intent);
         finish();
 //        Intent intent = new Intent(getApplicationContext(), testZxing.class);
@@ -148,14 +149,14 @@ public class AddFoodActivity extends AppCompatActivity implements View.OnClickLi
     public void mOnSubmit(View v){
         //TODO: 확인버튼 클릭시 실행 함수 구현
         save();
-//        Toast.makeText(getApplicationContext(), "확인 버튼 클릭", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "확인 버튼 클릭", Toast.LENGTH_SHORT).show();
         //엑티비티 팝업 닫기
         finish();
     }
 
     /*취소 버튼 클릭시 실행 함수*/
     public void mOnClose(View v){
-//        Toast.makeText(getApplicationContext(), "취소 버튼 클릭", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "취소 버튼 클릭", Toast.LENGTH_SHORT).show();
         finish();
 
     }
@@ -196,7 +197,7 @@ public class AddFoodActivity extends AppCompatActivity implements View.OnClickLi
 
         String name;
         Intent foodNameIntent = getIntent();
-        String foodName = foodNameIntent.getStringExtra("PRDname");
+        //String foodName = foodNameIntent.getStringExtra("PRDname");
         foodNameEdit.setText(foodName);
         name = foodNameEdit.getText().toString();
 
@@ -204,7 +205,7 @@ public class AddFoodActivity extends AppCompatActivity implements View.OnClickLi
         {
             if(name.equals("null"))
             {
-//                Toast.makeText(getApplicationContext(), "등록되지 않은 상품입니다.\n 상품명을 직접 입력해주세요.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "등록되지 않은 상품입니다.\n 상품명을 직접 입력해주세요.", Toast.LENGTH_LONG).show();
             }
         }
         //Toast.makeText(getApplicationContext(), "hi: "+foodName, Toast.LENGTH_LONG).show();

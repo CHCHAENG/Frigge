@@ -29,13 +29,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/bmdohyeon"
-                android:text="@string/shoppingList_add_info"
+                android:text="추가하실 냉장고의 이름을 적어주세요"
                 android:textAlignment="center"
-                android:textColor="@color/ggreen"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/ggreen"
+                android:layout_marginBottom="10dp"/>
 
             <FrameLayout
                 android:id="@+id/editTextName"
@@ -52,11 +52,11 @@
                     android:src="@drawable/enterplace" />
 
                 <EditText
-                    android:id="@+id/shopping_name_editText"
+                    android:id="@+id/fridgeName_editText"
                     android:layout_width="280dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@null"
                     android:fontFamily="@font/bmdohyeon"
                     android:textColor="@color/ggreen"
@@ -65,7 +65,7 @@
             </FrameLayout>
 
             <Button
-                android:id="@+id/shoppingList_register_btn"
+                android:id="@+id/fridgeList_register_btn"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -80,7 +80,5 @@
                 android:background="@drawable/fill_round_green"/>
         </LinearLayout>
     </FrameLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
